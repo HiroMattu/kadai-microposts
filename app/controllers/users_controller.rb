@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all.page(params[:page])
+    @user = current_user
   end
 
   def show
@@ -36,6 +37,12 @@ class UsersController < ApplicationController
   def followers
     @user = User.find(params[:id])
     @followers = @user.followers.page(params[:page])
+    counts(@user)
+  end
+  
+  def likes
+    @user =  User.find(params[:id])
+    @likes = @user.likes.page(params[:page])
     counts(@user)
   end
 

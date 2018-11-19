@@ -10,6 +10,9 @@
         </div>
         <div>
           <p><%= micropost.content %></p>
+          <div class="buttons text-center">
+                <%= render 'likes/like_button', micropost: micropost %>
+          </div>
         </div>
       </div>
     </li>
