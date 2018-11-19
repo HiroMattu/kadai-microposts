@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get 'likes/destroy'
   get 'relationships/create'
   get 'relationships/destroy'
-
+  
+  get 'likes', to: 'users#likes'
+  
   get 'signup', to: 'users#new'
   resources :users, only: [:index, :show, :new, :create] do
     member do
